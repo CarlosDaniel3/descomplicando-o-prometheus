@@ -113,3 +113,5 @@ Para acessar a interface web do prometheus, digite o seguinte endereço em um na
 ```
 http://localhost:9090
 ```
+
+O resultado será essa linda interface abaixo:
