@@ -115,3 +115,4 @@ http://localhost:9090
 ```
 
 O resultado será essa linda interface abaixo:
+![Interface do Prometheus](https://github.com/CarlosDaniel3/descomplicando-o-prometheus/blob/main/assets/prometheus-interface.png)
