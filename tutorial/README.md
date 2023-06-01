@@ -113,6 +113,7 @@ Para acessar a interface web do prometheus, digite o seguinte endereço em um na
 ```
 http://localhost:9090
 ```
-
-O resultado será essa linda interface abaixo:
+\
+O resultado será essa linda interface mostrada abaixo:
+\
 ![Interface do Prometheus](https://github.com/CarlosDaniel3/descomplicando-o-prometheus/blob/main/assets/prometheus-interface.png)
