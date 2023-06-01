@@ -66,7 +66,7 @@ Já que o Prometheus será um serviço na máquina em que for instalado, agora �
 sudo vim /etc/systemd/system/prometheus.service
 ```
 
-Agora o próximo passo é mudar o dono desses diretórios e arquivos que criamos para que o usuário do prometheus seja o dono dos mesmos:
+Agora o próximo passo é mudar o dono desses diretórios e arquivos criados para que o usuário do prometheus seja o dono dos mesmos:
 ```
 sudo chown -R prometheus:prometheus /var/log/prometheus
 
