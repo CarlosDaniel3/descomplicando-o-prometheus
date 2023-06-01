@@ -65,3 +65,51 @@ Já que o Prometheus será um serviço na máquina em que for instalado, agora �
 ```
 sudo vim /etc/systemd/system/prometheus.service
 ```
+
+Agora o próximo passo é mudar o dono desses diretórios e arquivos que criamos para que o usuário do prometheus seja o dono dos mesmos:
+```
+sudo chown -R prometheus:prometheus /var/log/prometheus
+
+sudo chown -R prometheus:prometheus /etc/prometheus
+
+sudo chown -R prometheus:prometheus /var/lib/prometheus
+
+sudo chown -R prometheus:prometheus /usr/local/bin/prometheus
+
+sudo chown -R prometheus:prometheus /usr/local/bin/promtool
+```
+
+Fazer um reload no systemd para que o serviço do Prometheus seja iniciado:
+```
+sudo systemctl daemon-reload
+```
+
+Iniciar o Prometheus:
+```
+sudo systemctl start prometheus
+```
+
+Configurar o serviço do Prometheus para que ele seja iniciado de forma automática ao iniciar o sistema:
+```
+sudo systemctl enable prometheus
+```
+
+Para garantir o funcionamento do serviço do Promethues, basta verificar o status do mesmo:
+```
+sudo systemctl status prometheus
+```
+
+Também é possível conferir por meio dos logs, que se tudo estiver funcionando corretamente, será a seguinte:
+```
+level=info msg="Server is ready to receive web requests."
+```
+
+Comando:
+```
+sudo journalctl -u prometheus
+```
+
+Para acessar a interface web do prometheus, digite o seguinte endereço em um navegador da sua preferência
+```
+http://localhost:9090
+```
