@@ -1,9 +1,11 @@
-# Tutorial de Instalação do Prometheus no Linux
+# Tutorial de Instalação e Configuração do Prometheus no Linux
 
 O exemplo será feito em uma máquina Ubuntu, mas pode ser replicado em qualquer outra Distribuição Linux.
 
 O primeiro passo será realizar o download dos 2 binários necessários (o do Prometheus e o do Promtool). O Promtool permite a execução de queries no Prometheus via terminal e o Prometheus server faz todo o processo acontecer. Além dos binários, também iremos trabalhar com o diretório consoles, console_libraries e com o arquivo de configuração do prometheus: o prometheus.yml. 
 Agora basta seguir os seguintes passos:
+
+Observação: Todos os arquivos de configuração do Prometheus estarão disponíveis no diretório conf desse repositório
 
 Download:
 
@@ -43,7 +45,23 @@ sudo mv prometheus-2.38.0.linux-amd64/consoles /etc/prometheus
 sudo mv prometheus-2.38.0.linux-amd64/console_libraries /etc/prometheus
 ```
 
-Editar os arquivos de configuração do Prometheus:
+Criar o arquivos de configuração do Prometheus:
 ```
 sudo vim /etc/prometheus/prometheus.yml
+```
+
+Criar o diretório onde o Prometheus irá guardar seus dados
+```
+sudo mkdir /var/lib/prometheus
+```
+
+Criar um grupo e um usuário para o Prometheus
+```
+sudo addgroup --system prometheus
+sudo adduser --shell /sbin/nologin --system --group prometheus
+```
+
+Já que o Prometheus será um serviço na máquina em que for instalado, agora é preciso criar o arquivo de service unit do SystemD:
+```
+sudo vim /etc/systemd/system/prometheus.service
 ```
