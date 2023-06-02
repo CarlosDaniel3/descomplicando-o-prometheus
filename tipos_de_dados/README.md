@@ -2,6 +2,7 @@
 
 # Gauge (Medidor)
 Utilizado para criar métricas com valores que podem aumentar ou diminuir.
+
 Exemplos: Consumo de memória ou CPU e temperatura de uma cidade
 
 Exemplo prático de uma métrica que mostra a utilização de memória:
