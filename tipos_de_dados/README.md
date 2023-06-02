@@ -60,9 +60,9 @@ requests_duration_seconds_sum{instance="localhost:8899",job="Primeiro Exporter"}
 ```
 
 Onde:
-_ sum: aponta que o valor é uma soma, que significa que ele é somado a cada vez que a métrica é atualizada. 
+* _ sum: aponta que o valor é uma soma, que significa que ele é somado a cada vez que a métrica é atualizada. 
 
-_ count: aponta que o valor é um contador. que significa que ele é incrementado a cada vez que a métrica é atualizada
+* _ count: aponta que o valor é um contador. que significa que ele é incrementado a cada vez que a métrica é atualizada
 
 Vantagens:
 * Alta precisão
